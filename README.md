@@ -1,7 +1,7 @@
 # Play with java8
 
 ## Create a list of a specified element property.
-```
+```java
 /**
  * For all the elements of the input list, create a list of a specific property.
  
