@@ -12,9 +12,8 @@
  * @return
  */
 private static <U, T> List<T> remapList(final List<U> allElements, final Function<U,T> specificProperty) {
-  if (CollectionUtils.isEmpty(allElements)) {
-    return null;
-  }
-  return allElements.stream().map(a -> specificProperty.apply(a)).collect(Collectors.toList());
+       return Optional.ofNullable(allElements)
+                    .map( al -> al.stream().map(a -> specificProperty.apply(a)).collect(Collectors.toList()))
+                    .orElse(null);
 }
 ```
